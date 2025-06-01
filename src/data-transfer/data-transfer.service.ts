@@ -26,7 +26,7 @@ export class DataTransferService {
         .get();
       if (!docSnapshot.exists)
         throw new Error(`Failed to save the data,pls try again later!!!`);
-      console.log('data saved successfully', docSnapshot.data());
+     // console.log('data saved successfully', docSnapshot.data());
       return {
         message: 'data saved successfully',
         result: { ...docSnapshot.data(), docID },
@@ -45,7 +45,7 @@ export class DataTransferService {
       // console.log(`the docID passed is:/${docID}/`);
       const docRef = this.db.collection('data-transfer').doc(docID);
       const docSnap = await docRef.get();
-      console.log('data fetched from get-api:', docSnap.data());
+     // console.log('data fetched from get-api:', docSnap.data());
       if (!docSnap.exists) {
         return {
           message: 'no data found matching the given docID',
